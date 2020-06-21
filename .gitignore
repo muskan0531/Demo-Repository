@@ -1,1 +1,6 @@
 error.log
+*.log  
+/dir/
+dir/
+static/New folder
+static/

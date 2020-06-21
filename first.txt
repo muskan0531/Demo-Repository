@@ -1,3 +1,75 @@
 This is version 1 of my project
 I want this changes to go into commit 2
 changed by Muskan
+
+
+git init   //initializing(one time)
+rm -rf .git //deleting git repository 
+
+git status
+git add . or git add --a (All) or git add first.txt (specific) --> add files in staging area (ready to commit)
+
+ls (lists all the files)
+
+touch   //create file using command line
+touch .gitignore  //you include all those files you want to ignore in .gitignore (see .gitignore)
+
+git diff (compare 2 same files ( modified and other is ready to commit) --> compare working directory with staging area
+git diff --staged  --> compare previous commit with staging area
+
+git commit -m "give some title or something so you can refer later"
+git commit -a -m " text " --> direct commit(skip staging area) but we need to add untracked files seperately because those files can not directy commit 
+
+git log --> shows all the commits you'd made
+
+press q key --. pager will exit
+
+when we rename a file git consider old name file as deleted and new name file as untracked file until we add that file to stage area
+
+git rm filename with extension  --> Remove file 
+							//both will stage files too 
+git mv old_name new_name   --> Rename file  
+
+
+//for untracking the file explicitly
+git rm --cached file name with extension --> if we are tracking a file and later realised we want to ignore that file and we add that file in .gitignore but that doesn't work until  we tell explicitly to untrack the file
+
+git clone url(url you want to insert) folder_name(you want to give to your repository folder) --> google se repositry uthana  
+
+git log -p --> changes will be shown 
+git log -p -2/-3/-4/-n  --> only n no. of commits will be shown.
+
+git log --stat --> in brief discrption what changes have been made.
+
+git log --pretty=oneline  --> each comment in log will be shownn be shown in oneline.
+git log --pretty=short --> short comment
+git log --pretty=full --> full comment
+git log --pretty=format:"%h -- %an" --> "google git scm.com (git log documentation for formatting).
+(kisi bhi format me jese upr hmne bola place holder then 2 minus sign then author name)
+
+git log --since=2.days --> filter applied which means only work of last 2 days.
+git log --since=2.weeks
+git log --since=2.months
+git log --since=2.years
+
+git commit --amend --> we will be able to amend our comment in previous comment  
+
+but we will first have to modify then add then check status then amend .
+vim editor will be shown .
+i (insert)
+esc then : with shift then w nd q. --> quit
+
+git restore --staged file_name with extension -->Unstage file
+
+git checkout -- file_name with extension -->unmodify file
+git checkout -f --> working directory changed into previous commit. you loose all the changes you have made after last commit.
+
+
+git remote add origin website_name --> orign is name 
+git remote --> show all repository
+git remote -v --> shows fetch and pull website 
+git pull -->github to local
+git push -->local to github
+
+
+
