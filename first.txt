@@ -119,5 +119,7 @@ if message is already written then you can use same message using vim editor .do
 2) Topic branches 
 
 #repository using https
+git remote add neworigin https://github.com/muskan0531/Demo-Repository.git
 
+git push -u neworigin master
 
