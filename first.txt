@@ -5,6 +5,7 @@ changed by Muskan
 
 git init   //initializing(one time)
 rm -rf .git //deleting git repository 
+git restore -->restore changes (change modified to last commit)
 
 git status
 git add . or git add --a (All) or git add first.txt (specific) --> add files in staging area (ready to commit)
@@ -12,7 +13,7 @@ git add . or git add --a (All) or git add first.txt (specific) --> add files in 
 ls (lists all the files)
 
 touch   //create file using command line
-touch .gitignore  //you include all those files you want to ignore in .gitignore (see .gitignore)
+touch .gitignore  //you include all those files you want to ignore in .gitignore (see .gitignore) . these files will not be tracked.
 
 git diff (compare 2 same files ( modified and other is ready to commit) --> compare working directory with staging area
 git diff --staged  --> compare previous commit with staging area
@@ -68,8 +69,55 @@ git checkout -f --> working directory changed into previous commit. you loose al
 git remote add origin website_name --> orign is name 
 git remote --> show all repository
 git remote -v --> shows fetch and pull website 
+
+
+
+//set SSH keys in order to add you content into github repository
+settings -> new ssh key --> give title
+SSH Keys github -->search on google for keys.  
+then follow steps
+
 git pull -->github to local
 git push -->local to github
 
+
+ git remote add origin https://github.com/muskan0531/gitlearning.git
+ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ eval $(ssh-agent -s)
+ ssh-add ~/.ssh/id_rsa
+ tail ssh-add ~/.ssh/id_rsa.pub  -->it'll generate some big line of key which we will put on github ssh key in order to generate link and we will be able to make push and pull request
+
+git push -u origin master -->pushing into github 
+
+git config --global alias.st status --> after this we will be able to use git st for knowing status. 
+git config --global alias.unstage 'restore --staged --'
+
+
+ (suggestion to follow always) Always commit before changing branch.
+git checkout -b newbranch_name -->new branch (-b means make new branch)
+git checkout master --> checkout from newbranch and come back to master state
+
+but .gitignore will be ignored.
+
+git branch -->shows all our branches.
+git branch -v -->shows all our branches with last commits.
+
+
+git merge branch_name(not master) -->merge branch with master branch
+git branch --merged -->shows branches which are already merged. hence can be deleted.
+git branch --no -merged -->not merged .
+
+git branch -d branch_name --> gives error if branch is not merged.
+git branch -d branch_name --> no error even if branch is not merged.
+
+Merge conflicts can arise if git consider 2 of the changes equally important example - in an html index file in more than one branch title has changed.
+if message is already written then you can use same message using vim editor .don't use -m" " after commit to use vim editor.
+
+
+2 types of Branches :
+1) Long Running branches
+2) Topic branches 
+
+#repository using https
 
 
